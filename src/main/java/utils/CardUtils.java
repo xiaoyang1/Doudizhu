@@ -3,12 +3,13 @@ package utils;
 import constant.PokerType;
 import entity.Card;
 import entity.Poker;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
+@Data
 public class CardUtils {
     // 判断是否是 单张
     public static boolean isSingle(List<Card> cards){
@@ -227,33 +228,33 @@ public class CardUtils {
             case 1:
                 return PokerType.SINGLE;
             case 2:{
-                if(isRocket(cards)) return PokerType.ROCKET;
-                if(isCouble(cards)) return PokerType.COUPLE;
+                if(isRocket(cards)) {return PokerType.ROCKET;}
+                if(isCouble(cards)) {return PokerType.COUPLE;}
                 break;
             }
             case 3:{
-                if(isThree(cards)) return PokerType.THREE;
+                if(isThree(cards)) {return PokerType.THREE;}
                 break;
             }
             case 4:{
-                if(isBoom(cards)) return PokerType.BOOM;
-                if(isThreeOne(cards)) return PokerType.THREE_ONE;
+                if(isBoom(cards)) {return PokerType.BOOM;}
+                if(isThreeOne(cards)) {return PokerType.THREE_ONE;}
                 break;
             }
             case 5:{
-                if(isThreeTwo(cards)) return PokerType.THREE_TWO;
-                if(isShunZi(cards)) return PokerType.SHUNZI;
-                if(isBoomOne(cards)) return PokerType.BOOM_ONE;
+                if(isThreeTwo(cards)) {return PokerType.THREE_TWO;}
+                if(isShunZi(cards)) {return PokerType.SHUNZI;}
+                if(isBoomOne(cards)) {return PokerType.BOOM_ONE;}
                 break;
             }
             default:{  // 大于5张牌的只有顺子，连队，四带二，飞机
-                if(isShunZi(cards)) return PokerType.SHUNZI;
-                if(isLianDui(cards)) return PokerType.LIANDUI;
-                if(isFeiJiOne(cards)) return PokerType.FEIJI_ONE;
-                if(isFeijiTwo(cards)) return  PokerType.FEI_JI_TWO;
-                if(isFeiJi(cards)) return PokerType.FEIJI;
-                if(isBoomTwo(cards)) return PokerType.BOOM_TWO;
-                if(isBoomTwoDouble(cards)) return PokerType.BOOM_TWO_DOUBLE;
+                if(isShunZi(cards)) {return PokerType.SHUNZI;}
+                if(isLianDui(cards)) {return PokerType.LIANDUI;}
+                if(isFeiJiOne(cards)) {return PokerType.FEIJI_ONE;}
+                if(isFeijiTwo(cards)) {return  PokerType.FEI_JI_TWO;}
+                if(isFeiJi(cards)) {return PokerType.FEIJI;}
+                if(isBoomTwo(cards)) {return PokerType.BOOM_TWO;}
+                if(isBoomTwoDouble(cards)) {return PokerType.BOOM_TWO_DOUBLE;}
                 break;
             }
         }
